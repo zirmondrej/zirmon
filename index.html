@@ -1,118 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O mně</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Základní nastavení */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moderní GitHub Page — Tvoje stránka</title>
+  <meta name="description" content="Moderní, responzivní a stylová šablona pro GitHub Pages." />
 
-        header {
-            background-color: #1f1f1f;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #ffffff;
-            border-bottom: 1px solid #333;
-        }
+  <!-- Google font (optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: rgba(255,255,255,0.04);
+      --muted: rgba(255,255,255,0.65);
+      --accent-1: #7c3aed; /* indigo/violet */
+      --accent-2: #06b6d4; /* teal */
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+      color-scheme: dark;
+      --max-width: 1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
 
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            text-align: center;
-        }
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071025 0%, #081426 50%, #071428 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 20px;
+      display:flex;justify-content:center;
+    }
 
-        .profile img {
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
+    .wrap{width:100%;max-width:var(--max-width)}
 
-        .about {
-            max-width: 700px;
-        }
+    /* Header / nav */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:grid;place-items:center;font-weight:800;color:white;box-shadow:0 6px 18px rgba(12,12,20,0.6)}
+    .site-title{font-weight:700;font-size:1.05rem}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:var(--glass);color: #fff}
 
-        .about h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
+    .cta{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));padding:8px 14px;border-radius:12px;color:white;font-weight:700}
 
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #cccccc;
-        }
+    /* Mobile nav */
+    .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:1.2rem}
 
-        footer {
-            background-color: #1f1f1f;
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            border-top: 1px solid #333;
-            margin-top: 50px;
-        }
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .eyebrow{display:inline-block;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--muted);font-size:0.82rem}
+    h1{margin:14px 0 10px;font-size:2.1rem;line-height:1.05}
+    p.lead{color:var(--muted);font-size:1.02rem;margin:0 0 18px}
 
-        @media (min-width: 768px) {
-            .profile {
-                flex-direction: row;
-                text-align: left;
-            }
+    /* Cards area */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;backdrop-filter:blur(6px);box-shadow:0 8px 20px rgba(7,10,20,0.6)}
+    .card h3{margin:0 0 10px;font-size:1rem}
+    .card p{margin:0;color:var(--muted);font-size:0.95rem}
 
-            .profile img {
-                margin-right: 40px;
-            }
-        }
-    </style>
+    /* Right column */
+    .hero-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .info-list{display:flex;flex-direction:column;gap:12px}
+    .info{display:flex;gap:12px;align-items:center}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--accent-2)}
+
+    footer{opacity:0.9;margin-top:34px;color:var(--muted);font-size:0.92rem}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .center{display:grid;place-items:center}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 360px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:780px){
+      body{padding:20px}
+      .hero{grid-template-columns:1fr;}
+      .hamburger{display:inline-block}
+      nav{display:none}
+      .cards{grid-template-columns:1fr}
+      .logo{width:40px;height:40px}
+      h1{font-size:1.6rem}
+    }
+
+    /* Small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .7s forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+
+    /* Theme: light fallback (toggle) */
+    :root.light{--bg:#f7fbff;color-scheme:light;--card:rgba(6,10,15,0.03);--muted:#334155;--glass:rgba(0,0,0,0.03);--logo-text:#06202b}
+    :root.light body{background:linear-gradient(180deg,#fff,#f0f7ff)}
+  </style>
 </head>
 <body>
-
+  <div class="wrap">
     <header>
-        🌌 Moje Osobní Stránka
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div>
+          <div class="site-title">Tvoje stránka</div>
+          <div class="muted" style="font-size:.82rem">Moderní šablona • GitHub Pages ready</div>
+        </div>
+      </div>
+
+      <nav aria-label="Hlavní navigace">
+        <a href="#features">Funkce</a>
+        <a href="#pricing">Ceník</a>
+        <a href="#contact">Kontakt</a>
+        <a class="cta" href="#get">Nasadit</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Otevřít menu">☰</button>
     </header>
 
     <main>
-        <section class="profile">
-            <!-- Fotka leoparda -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Leopard_africa.jpg" alt="Leopard">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Šablona</span>
+          <h1 class="fade-up">Moderní, responzivní a stylová stránka pro GitHub Pages</h1>
+          <p class="lead">Připravená šablona se sekcemi, animacemi, responsivním layoutem a jednoduchým JavaScriptem pro menu a přepínač vzhledu (dark/light). Stačí nahrát <code>index.html</code> do repozitáře a aktivovat GitHub Pages.</p>
 
-            <!-- Informace o tobě -->
-            <div class="about">
-                <h2>O mně</h2>
-                <p>
-                    Ahoj! Jmenuji se [Tvé jméno] a mám rád přírodu, zvířata a moderní technologie.
-                    Rád se učím nové věci a vytvářím kreativní projekty – třeba webové stránky jako je tahle.
-                    Leopard je mé oblíbené zvíře, protože je rychlý, elegantní a silný.
-                </p>
+          <div class="cards">
+            <div class="card fade-up">
+              <h3>Rychlé nasazení</h3>
+              <p>Nahrát soubor <code>index.html</code> do větve <code>main</code> (nebo gh-pages) a zapnout GitHub Pages.</p>
             </div>
-        </section>
-    </main>
+            <div class="card fade-up">
+              <h3>Responzivní</h3>
+              <p>Grid a media queries zajišťují skvělý vzhled na mobilech i desktopu.</p>
+            </div>
+            <div class="card fade-up">
+              <h3>Snadná úprava</h3>
+              <p>Barvy, písmo a obsah upravíš přímo v tomto souboru. Komentáře v kódu pomohou.</p>
+            </div>
+          </div>
 
-    <footer>
-        &copy; 2025 [Tvé jméno] • Všechna práva vyhrazena
-    </footer>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="cta" href="#get">Nasadit zdarma</a>
+            <a style="padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none;font-weight:700" href="#contact">Chci upravit</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div>
+              <div class="muted" style="font-size:0.85rem">Live preview</div>
+              <div style="font-weight:700;font-size:1.05rem">Vzhled a + jednoduché info</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button id="themeToggle" aria-label="Přepnout téma" style="padding:8px;border-radius:10px;border:0;background:transparent;color:var(--muted);font-weight:700">Téma</button>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info"><div class="dot"></div><div><strong>Responsivní</strong><div class="muted">Grid + Media queries</div></div></div>
+            <div class="info"><div class="dot" style="background:var(--accent-1)"></div><div><strong>Optimalizace</strong><div class="muted">Malé množství CSS, žádné externí JS</div></div></div>
+            <div class="info"><div class="dot" style="background:linear-gradient(90deg,var(--accent-1),var(--accent-2))"></div><div><strong>Přizpůsobitelné</strong><div class="muted">Snadno změníš barvy a písmo</div></div></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" style="margin-top:28px">
+        <h2 style="margin:0 0 12px">Funkce</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div class="card">
+            <h3>SEO & meta</h3>
+            <p class="muted">Základní meta tagy jsou součástí souboru. Přidej Open Graph obrázek a title podle potřeby.</p>
+          </div>
+          <div class="card">
+            <h3>Formulář kontaktu</h3>
+            <p class="muted">Jednoduchý kontakt se může připojit k Netlify Forms, Formspree nebo jinému řešení — pro GitHub Pages je potřeba externí služba.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" style="margin-top:22px">
+        <h2 style="margin:0 0 12px">Ceník</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div class="card center"><div><strong>Free</strong><div class="muted">GitHub Pages hosting</div></div></div>
+          <div class="card center"><div><strong>Pro</strong><div class="muted">Vlastní doména & SSL</div></div></div>
+          <div class="card center"><div><strong>Agency</strong><div class="muted">Podpora a úpravy</div></div></div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:22px">
+        <h2 style="margin:0 0 12px">Kontakt</h2>
+        <form onsubmit="alert('Toto je demo. Pro produkci připoj formulář k externí službě.');return false;" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input placeholder="Jméno" required style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.03);color:inherit" />
+          <input placeholder="Email" required type="email" style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.03);color:inherit" />
+          <textarea placeholder="Zpráva" required style="grid-column:1/-1;padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.03);color:inherit;min-height:110px"></textarea>
+          <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center">
+            <div class="muted">Nebo najdi repozitář a uprav ho přímo.</div>
+            <button class="cta" type="submit">Odeslat</button>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div class="muted">© "Tvoje jméno" — Všechna práva vyhrazena</div>
+          <div class="muted">Vyrobeno s ♥ pro GitHub Pages</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    hamburger && hamburger.addEventListener('click', ()=>{
+      const nav = document.querySelector('nav');
+      if(!nav) return;
+      if(getComputedStyle(nav).display === 'none'){
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.right = '20px';
+        nav.style.top = '66px';
+        nav.style.background = 'linear-gradient(180deg, rgba(12,18,28,0.95), rgba(6,8,15,0.95))';
+        nav.style.padding = '12px';
+        nav.style.borderRadius = '12px';
+      } else {
+        nav.style.display = 'none';
+      }
+    });
+
+    // Theme toggle (dark/light) — keeps simple localStorage
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(mode){
+      if(mode === 'light'){
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme','light');
+      } else {
+        document.documentElement.classList.remove('light');
+        localStorage.setItem('theme','dark');
+      }
+    }
+    // init
+    const prefer = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    setTheme(prefer);
+    themeToggle && themeToggle.addEventListener('click', ()=>{
+      const isLight = document.documentElement.classList.contains('light');
+      setTheme(isLight ? 'dark' : 'light');
+    });
+  </script>
 
 </body>
 </html>
-
