@@ -57,6 +57,29 @@
         </div>
       </section>
 
+      <!-- Kontakt -->
+      <section id="contact" class="contact">
+        <h2>Kontakt</h2>
+        <p class="lead">Máte dotaz nebo návrh? Napište mi zprávu:</p>
+
+        <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
+          <!-- 🔁 Nahraď "your_form_id" svým Formspree ID -->
+          <label>
+            Jméno
+            <input type="text" name="name" required placeholder="Vaše jméno">
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" required placeholder="váš@email.cz">
+          </label>
+          <label class="full">
+            Zpráva
+            <textarea name="message" required placeholder="Vaše zpráva..."></textarea>
+          </label>
+          <button type="submit" class="cta">Odeslat</button>
+        </form>
+      </section>
+
       <footer>
         <div class="footer-content">
           <div class="muted">© Tvoje jméno — Všechna práva vyhrazena</div>
