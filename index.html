@@ -3,98 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moderní GitHub Page — Tvoje stránka</title>
+  <title>Moderní GitHub Page</title>
   <meta name="description" content="Moderní, responzivní a stylová šablona pro GitHub Pages." />
-
-  <!-- Google font (optional) -->
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --muted: #334155;
-      --accent-1: #6366f1; /* indigo */
-      --accent-2: #0ea5e9; /* sky blue */
-      --glass: rgba(0,0,0,0.05);
-      --radius: 14px;
-      --max-width: 1100px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color-scheme: light;
-    }
-
-    /* Reset + base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,#f1f5f9 0%, #e2e8f0 100%);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:32px 20px;
-      display:flex;justify-content:center;
-    }
-
-    .wrap{width:100%;max-width:var(--max-width)}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:grid;place-items:center;font-weight:800;color:white;box-shadow:0 6px 18px rgba(12,12,20,0.3)}
-    .site-title{font-weight:700;font-size:1.05rem}
-    nav{display:flex;gap:14px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
-    nav a:hover{background:var(--glass);color: #000}
-
-    .cta{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));padding:8px 14px;border-radius:12px;color:white;font-weight:700;text-decoration:none}
-
-    .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:1.2rem}
-
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
-    .eyebrow{display:inline-block;background:rgba(0,0,0,0.05);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--muted);font-size:0.82rem}
-    h1{margin:14px 0 10px;font-size:2.1rem;line-height:1.05}
-    p.lead{color:var(--muted);font-size:1.02rem;margin:0 0 18px}
-
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.05)}
-    .card h3{margin:0 0 10px;font-size:1rem}
-    .card p{margin:0;color:var(--muted);font-size:0.95rem}
-
-    .hero-panel{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-    .info-list{display:flex;flex-direction:column;gap:12px}
-    .info{display:flex;gap:12px;align-items:center}
-    .dot{width:12px;height:12px;border-radius:50%;background:var(--accent-2)}
-
-    footer{opacity:0.9;margin-top:34px;color:var(--muted);font-size:0.92rem}
-
-    @media (max-width:1000px){
-      .hero{grid-template-columns:1fr 360px}
-      .cards{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:780px){
-      body{padding:20px}
-      .hero{grid-template-columns:1fr;}
-      .hamburger{display:inline-block}
-      nav{display:none}
-      .cards{grid-template-columns:1fr}
-      .logo{width:40px;height:40px}
-      h1{font-size:1.6rem}
-    }
-
-    /* Dark mode */
-    :root.dark{
-      --bg: #0f1724;
-      --card: rgba(255,255,255,0.04);
-      --muted: rgba(255,255,255,0.7);
-      --glass: rgba(255,255,255,0.03);
-      color-scheme: dark;
-      background: linear-gradient(180deg,#071025 0%, #081426 50%, #071428 100%);
-      color: #e6eef8;
-    }
-  </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
@@ -102,19 +17,18 @@
         <div class="logo">MG</div>
         <div>
           <div class="site-title">Tvoje stránka</div>
-          <div class="muted" style="font-size:.82rem">Moderní šablona • GitHub Pages ready</div>
+          <div class="muted">Moderní šablona • GitHub Pages ready</div>
         </div>
       </div>
 
-      <nav aria-label="Hlavní navigace">
+      <nav>
         <a href="#features">Funkce</a>
         <a href="#pricing">Ceník</a>
         <a href="#contact">Kontakt</a>
         <a class="cta" href="#get">Nasadit</a>
       </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Otevřít menu">☰</button>
-      <button id="themeToggle" style="padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.1);background:var(--card);cursor:pointer">🌙 / ☀️</button>
+      <button id="themeToggle" class="theme-btn" aria-label="Přepnout téma">🌙 / ☀️</button>
     </header>
 
     <main>
@@ -122,12 +36,14 @@
         <div>
           <span class="eyebrow">Šablona</span>
           <h1>Moderní, responzivní a stylová stránka pro GitHub Pages</h1>
-          <p class="lead">Připravená šablona s možností přepínání světlého a tmavého režimu.</p>
+          <p class="lead">
+            Připravená šablona s možností přepínání světlého a tmavého režimu.
+          </p>
 
           <div class="cards">
             <div class="card">
               <h3>Rychlé nasazení</h3>
-              <p>Nahrát soubor <code>index.html</code> do větve <code>main</code> a zapnout GitHub Pages.</p>
+              <p>Nahraj soubor <code>index.html</code> a aktivuj GitHub Pages.</p>
             </div>
             <div class="card">
               <h3>Responzivní</h3>
@@ -135,14 +51,14 @@
             </div>
             <div class="card">
               <h3>Snadná úprava</h3>
-              <p>Barvy, písmo a obsah upravíš přímo v tomto souboru.</p>
+              <p>Barvy, písmo a obsah upravíš přímo v souboru <code>style.css</code>.</p>
             </div>
           </div>
         </div>
       </section>
 
       <footer>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div class="footer-content">
           <div class="muted">© Tvoje jméno — Všechna práva vyhrazena</div>
           <div class="muted">Vyrobeno s ♥ pro GitHub Pages</div>
         </div>
@@ -151,10 +67,12 @@
   </div>
 
   <script>
-    // Dark/light mode toggle
+    // Theme toggle with auto system detection
     const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') document.documentElement.classList.add('dark');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+
+    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
 
     themeToggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
