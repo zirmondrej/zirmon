@@ -1,0 +1,177 @@
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: #ffffff;
+  --muted: #475569;
+  --accent-1: #6366f1;
+  --accent-2: #0ea5e9;
+  --radius: 14px;
+  --max-width: 1100px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: var(--text);
+  line-height: 1.45;
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+.cta {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.theme-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--card);
+  cursor: pointer;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+h1 {
+  margin: 14px 0 10px;
+  font-size: 2.1rem;
+  line-height: 1.05;
+}
+
+p.lead {
+  color: var(--muted);
+  font-size: 1.02rem;
+  margin: 0 0 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer {
+  margin-top: 34px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  opacity: 0.9;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 🌙 Tmavý režim */
+:root.dark {
+  --bg: #0f1724;
+  --text: #e6eef8;
+  --card: rgba(255, 255, 255, 0.05);
+  --muted: rgba(255, 255, 255, 0.7);
+  color-scheme: dark;
+}
+
+:root.dark body {
+  background: linear-gradient(180deg, #071025 0%, #081426 100%);
+}
