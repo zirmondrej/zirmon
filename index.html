@@ -3,75 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje Tmavá Stránka</title>
+    <title>O mně</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Základní styly pro tmavé téma */
+        /* Základní nastavení */
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Inter', sans-serif;
             background-color: #121212;
-            color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            color: #e0e0e0;
         }
 
         header {
             background-color: #1f1f1f;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 600;
             color: #ffffff;
             border-bottom: 1px solid #333;
         }
 
         main {
-            padding: 30px;
-            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1000px;
             margin: auto;
         }
 
-        h1, h2 {
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .profile img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .about {
+            max-width: 700px;
+        }
+
+        .about h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
             color: #ffffff;
         }
 
-        p {
+        .about p {
+            font-size: 1.1rem;
             line-height: 1.6;
             color: #cccccc;
-        }
-
-        a {
-            color: #64b5f6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         footer {
             background-color: #1f1f1f;
             text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
+            padding: 20px;
             color: #888;
             border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .profile img {
+                margin-right: 40px;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
-        🌙 Vítej na mé tmavé stránce
+        🌌 Moje Osobní Stránka
     </header>
 
     <main>
-        <h1>Ahoj světe!</h1>
-        <p>Toto je jednoduchá HTML stránka s tmavým motivem. Můžeš si ji upravit podle svých potřeb. Pokud chceš přidat tlačítka, formuláře nebo další části, dej mi vědět.</p>
+        <section class="profile">
+            <!-- Fotka leoparda -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Leopard_africa.jpg" alt="Leopard">
 
-        <h2>Odkazy</h2>
-        <p>Navštiv <a href="https://www.example.com" target="_blank">tento odkaz</a> pro více informací.</p>
+            <!-- Informace o tobě -->
+            <div class="about">
+                <h2>O mně</h2>
+                <p>
+                    Ahoj! Jmenuji se [Tvé jméno] a mám rád přírodu, zvířata a moderní technologie.
+                    Rád se učím nové věci a vytvářím kreativní projekty – třeba webové stránky jako je tahle.
+                    Leopard je mé oblíbené zvíře, protože je rychlý, elegantní a silný.
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        &copy; 2025 Moje Tmavá Stránka
+        &copy; 2025 [Tvé jméno] • Všechna práva vyhrazena
     </footer>
+
 </body>
 </html>
+
