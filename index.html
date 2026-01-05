@@ -1,107 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zirmova stránka</title>
-  <meta name="description" content="Moderní, responzivní a stylová šablona pro GitHub Pages." />
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chyba 404 - Jsi v pasti!</title>
+    <style>
+        body {
+            background-color: #121212; /* Tmavé pozadí, aby to vyniklo */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Červená záře kolem fotky */
+            border: 2px solid #ff3333;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-top: 20px;
+            text-transform: uppercase;
+            color: #ff3333;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #ff3333; /* Agresivní červená */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: transform 0.2s, background-color 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05); /* Tlačítko se po najetí zvětší */
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">MG</div>
-        <div>
-          <div class="site-title">Tvoje stránka</div>
-          <div class="muted">Moderní šablona</div>
-        </div>
-      </div>
 
-      <nav>
-        <a href="#features">Funkce</a>
-        <a href="#pricing">Ceník</a>
-        <a href="#contact">Kontakt</a>
-        <a class="cta" href="#get">Nasadit</a>
-      </nav>
+    <div class="container">
+        <img src="404-meme.jpg" alt="Chyba 404 - Křičící muž s telefonem">
+        
+        <a href="/" class="btn">Jdu jinam, šéfe! (Zpět na úvod)</a>
+    </div>
 
-      <button id="themeToggle" class="theme-btn" aria-label="Přepnout téma">🌙/☀️</button>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div>
-          <span class="eyebrow">Šablona</span>
-          <h1>Moderní, responzivní a stylová stránka pro GitHub Pages</h1>
-          <p class="lead">
-            Připravená šablona s možností přepínání světlého a tmavého režimu.
-          </p>
-
-          <div class="cards">
-            <div class="card">
-              <h3>Rychlé nasazení</h3>
-              <p>Nahraj soubor <code>index.html</code> a aktivuj GitHub Pages.</p>
-            </div>
-            <div class="card">
-              <h3>Responzivní</h3>
-              <p>Perfektní vzhled na mobilech i počítačích.</p>
-            </div>
-            <div class="card">
-              <h3>Snadná úprava</h3>
-              <p>Barvy, písmo a obsah upravíš přímo v souboru <code>style.css</code>.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Kontakt -->
-      <section id="contact" class="contact">
-        <h2>Kontakt</h2>
-        <p class="lead">Máte dotaz nebo návrh? Napište mi zprávu:</p>
-
-        <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
-          <!-- 🔁 Nahraď "your_form_id" svým Formspree ID -->
-          <label>
-            Jméno
-            <input type="text" name="name" required placeholder="Vaše jméno">
-          </label>
-          <label>
-            E-mail
-            <input type="email" name="email" required placeholder="váš@email.cz">
-          </label>
-          <label class="full">
-            Zpráva
-            <textarea name="message" required placeholder="Vaše zpráva..."></textarea>
-          </label>
-          <button type="submit" class="cta">Odeslat</button>
-        </form>
-      </section>
-
-      <footer>
-        <div class="footer-content">
-          <div class="muted">© Tvoje jméno — Všechna práva vyhrazena</div>
-          <div class="muted">Vyrobeno s ♥</div>
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // Theme toggle with auto system detection
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-
-    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
-
-    themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  </script>
 </body>
 </html>
